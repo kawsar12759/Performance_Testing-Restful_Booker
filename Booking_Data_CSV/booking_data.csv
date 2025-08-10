@@ -1,0 +1,22 @@
+firstname,lastname,totalprice,depositpaid,checkin,checkout,additionalneeds
+Jim,Brown,111,true,1/1/2018,1/1/2019,Breakfast
+Toni,Barnes,164,true,2/4/2022,6/23/2026,Lunch
+Darin,Gonzalez,426,true,1/24/2021,11/24/2025,None
+Lisa,Perez,99,false,3/12/2025,3/25/2026,Dinner
+Deanna,Carr,186,false,1/16/2022,3/25/2026,Extra bed
+Elizabeth,Morris,211,false,11/4/2020,12/19/2025,Breakfast
+Jessica,Hampton,490,false,7/9/2023,5/17/2026,Lunch
+Russell,Perez,441,false,10/17/2022,5/10/2026,Dinner
+Jerry,Anderson,161,false,7/5/2022,5/7/2026,Breakfast
+Jennifer,Jones,300,false,1/14/2022,1/6/2026,Dinner
+Shawn,Frazier,498,false,1/1/2021,12/14/2025,Extra bed
+Monica,Bell,360,true,3/23/2023,2/10/2026,Dinner
+Kelsey,Morgan,107,true,3/30/2022,3/21/2026,Breakfast
+James,Douglas,129,true,2/18/2024,11/15/2025,Breakfast
+Lisa,Sullivan,183,true,2/11/2025,4/23/2026,Extra bed
+Tristan,Hall,187,true,8/30/2021,2/11/2026,Dinner
+Michelle,Greene,117,false,12/6/2021,2/2/2026,Extra bed
+Richard,Martin,300,false,5/25/2025,8/10/2025,Lunch
+Michael,Russell,474,false,8/23/2024,9/26/2025,None
+Christian,Cordova,496,true,7/9/2021,5/26/2026,Dinner
+Rickey,Brock,410,true,3/31/2021,9/3/2025,Dinner
