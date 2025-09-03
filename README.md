@@ -24,30 +24,31 @@ Restful-Booker API offers endpoints to manage hotel bookings and includes:
 
 ## Test Types & Configuration
 **1. Load Testing**
-- Thread Counts: 500, 1000, 1500, 2000, 2500, 3000, 3500
-- Ramp-Up: 10s
-- Loop Count: 1 (each thread runs one iteration)
+- **Thread Counts:** 500, 1000, 1500, 2000, 2500, 3000, 3500
+- **Ramp-Up:** 10s
+- **Loop Count:** 1 (each thread runs one iteration)
 
 
 **2. Spike Testing**
 - Two scenarios using Ultimate Thread Group:
-- 1000 threads: Ramp up in 5s, hold 60s, ramp down in 5s
-- 2000 threads: Same pattern scaled higher
+- **1000 threads:** Ramp up in 5s, hold 60s, ramp down in 5s
+- **2000 threads:** Same pattern scaled higher
 
 **3. Stress Testing**
-- Stepwise user increase: 300 → 600 → 900 → 1200 → 1500 → 1800 threads
-- Each increment: ramp-up over 20s, hold for 60s, shutdown 10s (final stage shutdown 30s)
+- **Stepwise user increase:** 300 → 600 → 900 → 1200 → 1500 → 1800 threads
+- **Each increment:** ramp-up over 20s, hold for 60s, shutdown 10s (final stage shutdown 30s)
 
 **4. Endurance Testing**
 - 3000 threads, infinite loop
-- Ramp-Up: 10s, Duration: 10,800 seconds (3 hours)
-- Includes all API operations: auth, create, get, update, partial update, delete
+- **Ramp-Up:** 10s, Duration: 10,800 seconds (3 hours)
+- **Includes all API operations:** auth, create, get, update, partial update, delete
 
 --- 
 
 ## Data Driven Testing
 Used booking_data.csv, containing 21 distinct booking payload rows (fields: firstname, lastname, totalprice, depositpaid, checkin, checkout, additionalneeds). This was used with JMeter’s CSV Data Set Config to simulate realistic and variable booking data.
-
+The csv file sample is shown below:
+![booking_data.csv](https://drive.google.com/file/d/1jXseLRwyQSSpId6J5-oDepGOmMBM0zGy)
 
 ## Reporting with Allure
 
@@ -95,7 +96,8 @@ Allure provides an interactive, web-based dashboard with metrics such as respons
 |    2500 |       1719 ms |    488/sec |       0% |
 |    3000 |       3562 ms |    279/sec |       0% |
 |    3500 |       5658 ms |    270/sec | **7.5%** |
-Beyond ~1500 threads, performance degraded sharply—latency spiked, throughput dropped, and error rate began rising.
+
+Beyond ~20000 threads, performance degraded sharply—latency spiked, throughput dropped, and error rate began rising.
 
 ## Spike Testing
 - **1000 threads spike:** No failures; average response times varied by endpoint (~0.9–2.4s), throughput ~530 req/sec.
