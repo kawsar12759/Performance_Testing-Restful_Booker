@@ -23,34 +23,24 @@ Restful-Booker API offers endpoints to manage hotel bookings and includes:
 ---
 
 ## Test Types & Configuration
-1. Load Testing
-
+**1. Load Testing**
 - Thread Counts: 500, 1000, 1500, 2000, 2500, 3000, 3500
-
 - Ramp-Up: 10s
-
 - Loop Count: 1 (each thread runs one iteration)
 
-2. Spike Testing
 
+**2. Spike Testing**
 - Two scenarios using Ultimate Thread Group:
-
 - 1000 threads: Ramp up in 5s, hold 60s, ramp down in 5s
-
 - 2000 threads: Same pattern scaled higher
 
-3. Stress Testing
-
+**3. Stress Testing**
 - Stepwise user increase: 300 → 600 → 900 → 1200 → 1500 → 1800 threads
-
 - Each increment: ramp-up over 20s, hold for 60s, shutdown 10s (final stage shutdown 30s)
 
-4. Endurance (Soak) Testing
-
+**4. Endurance Testing**
 - 3000 threads, infinite loop
-
 - Ramp-Up: 10s, Duration: 10,800 seconds (3 hours)
-
 - Includes all API operations: auth, create, get, update, partial update, delete
 
 --- 
@@ -93,7 +83,6 @@ Allure provides an interactive, web-based dashboard with metrics such as respons
 
 - **Response time trend:** Cyclic sawtooth pattern with periodic spikes, but no continuous degradation
 - **Conclusion:** The API remained up but showed performance instability and high error rate under sustained heavy load.
-![Endurance Test – 500 Users](reports/load_500.png)
 
 
 **Load Testing Summary**
@@ -109,8 +98,8 @@ Allure provides an interactive, web-based dashboard with metrics such as respons
 Beyond ~1500 threads, performance degraded sharply—latency spiked, throughput dropped, and error rate began rising.
 
 ## Spike Testing
-- 1000 threads spike: No failures; average response times varied by endpoint (~0.9–2.4s), throughput ~530 req/sec.
-- 2000 threads spike: No failures; average latencies increased 3–4×, throughput dropped to ~339 req/sec; heavy endpoints (update/delete) showed mean 7–8s response times.
+- **1000 threads spike:** No failures; average response times varied by endpoint (~0.9–2.4s), throughput ~530 req/sec.
+- **2000 threads spike:** No failures; average latencies increased 3–4×, throughput dropped to ~339 req/sec; heavy endpoints (update/delete) showed mean 7–8s response times.
 
 ## Stress Testing (up to 1800 threads)
 - **Error Rate:** ~1.3%
@@ -120,7 +109,7 @@ Beyond ~1500 threads, performance degraded sharply—latency spiked, throughput 
 
 ---
 
-Key Insights
+## Key Insights
 
 - **Maximum stable throughput:** ~500 req/sec (under steady load).
 - **Optimal concurrency:** ~1500 threads—beyond this point, performance collapses.
